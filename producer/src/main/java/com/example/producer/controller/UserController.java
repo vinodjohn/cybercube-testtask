@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserController {
     private static final ObjectMapper JSON_MAPPER = Jackson2ObjectMapperBuilder.json()
             .modules(new JavaTimeModule())
@@ -40,7 +40,7 @@ public class UserController {
     @Autowired
     private MessageService messageService;
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<?> createUser(@RequestBody User user) {
         if (user == null) {
             log.error("Empty request received without errors");

@@ -20,5 +20,6 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public void sendMessage(String topic, String message) {
         kafkaTemplate.send(topic, message);
+        log.info("Message sent. Message: " + message);
     }
 }

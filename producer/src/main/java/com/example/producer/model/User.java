@@ -1,6 +1,5 @@
 package com.example.producer.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,6 +21,6 @@ public class User implements Serializable {
     private String firstName;
     @JsonProperty("last_name")
     private String lastName;
-    @JsonIgnore
+    @JsonProperty("application_name")
     private String applicationName;
 }
