@@ -1,12 +1,16 @@
 package com.example.consumer.service;
 
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Service;
+/**
+ * Service interface for user related logics
+ *
+ * @author Vinod John
+ */
+public interface UserService {
 
-@Service
-public class UserService {
-    @KafkaListener(topics = "users", groupId = "group_user")
-    public void consume(String message) {
-        System.out.println("Consumed msg: " + message);
-    }
+    /**
+     * Listener to create new user.
+     *
+     * @param userJSON
+     */
+    void createUser(String userJSON);
 }
