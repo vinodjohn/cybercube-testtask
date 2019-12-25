@@ -14,6 +14,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,10 +47,5 @@ public class UserServiceImpl implements UserService {
             log.error(errorMsg, e);
             throw new BadRequestException("invalid-request", errorMsg, e);
         }
-
-/*        List<User> userList = userRepository.findAll().;
-        for (User user : userList) {
-            log.info(user.getFirstName());
-        }*/
     }
 }

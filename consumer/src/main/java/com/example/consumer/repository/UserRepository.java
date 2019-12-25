@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @author Vinod John
  */
 @Repository
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserRepository extends CrudRepository<User, String> {
 }
