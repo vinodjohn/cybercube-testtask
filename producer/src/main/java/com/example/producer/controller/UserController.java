@@ -1,5 +1,6 @@
 package com.example.producer.controller;
 
+import com.example.producer.common.ProducerConfiguration;
 import com.example.producer.exception.BadRequestException;
 import com.example.producer.model.User;
 import com.example.producer.service.MessageService;
@@ -35,8 +36,8 @@ public class UserController {
 
     private static final String TOPIC = "users";
 
-    @Value("${application.name}")
-    private String applicationName;
+    @Autowired
+    private ProducerConfiguration producerConfiguration;
     @Autowired
     private MessageService messageService;
 
@@ -46,7 +47,7 @@ public class UserController {
             log.error("Empty request received without errors");
             throw new BadRequestException("invalid-request", "Invalid content!");
         } else {
-            user.setApplicationName(applicationName);
+            user.setApplicationName(producerConfiguration.getApplicationName());
             try {
                 String userMessage = JSON_MAPPER.writeValueAsString(user);
                 messageService.sendMessage(TOPIC, userMessage);

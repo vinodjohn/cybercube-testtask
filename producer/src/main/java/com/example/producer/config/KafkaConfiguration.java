@@ -10,7 +10,11 @@ import org.springframework.kafka.core.ProducerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Spring configuration for Apache Kafka
+ *
+ * @author Vinod John
+ */
 @Configuration
 public class KafkaConfiguration {
     @Bean
