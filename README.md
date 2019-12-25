@@ -9,14 +9,16 @@ Test task for CyberCube Java Developer position.
 5. Redis
 
 ## Development description
-This task has two applications: **producer** and **consumer**. The producer app has the API service endpoint for user registration and consumer app has a service that saves the user record to the database.
+This task has two applications: **producer** and **consumer**. The producer app has the API service endpoint for user registration and consumer app has a service that saves the user record to the database.  
+
+Producer app runs on port *9000* and consumer app runs on port *9001*. These server port numbers can be changed in *src/main/resources/application.properties/server.port* of respective projects. 
 
 ## Setup and installation
 1. Download and install: Apache Kakfa and Redis
 2. Run Zookeeper instance for Kafka and Kafka server on port: 9092
 3. Start Redis server
-4. Clone this project and run producer and consumer apps separately.
-5. Make request to producer API.
+4. Clone this repository. Run producer and consumer apps separately.
+5. Make a POST request to producer API.
 
 ### To register a user, the following APIs can be used:
 In case of local run of application, **POST** request to
